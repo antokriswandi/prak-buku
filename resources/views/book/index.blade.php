@@ -41,7 +41,7 @@
                     <td>{{ $book->penerbit }}</td>
                     <td>
                         <a href="{{ route('buku.show', $book->id) }}" class="btn btn-sm btn-info">Detail</a>
-                        <a href="" class="btn btn-sm btn-warning">Edit</a>
+                        <a href="{{ route('buku.edit', $book->id) }}" class="btn btn-sm btn-warning">Edit</a>
                         <a href="" class="btn btn-sm btn-danger">Hapus</a>
                     </td>
                 </tr>

@@ -18,3 +18,9 @@ Route::post('/buku', [ControllerBook::class, 'store'])->name('buku.store');
 
 // Route untuk menampilkan halaman detail buku
 Route::get('/buku/{buku}', [ControllerBook::class, 'show'])->name('buku.show');
+
+// Route untuk menampilkan form edit buku
+Route::get('/buku/{buku}/edit', [ControllerBook::class, 'edit'])->name('buku.edit');
+
+// Route untuk memperbarui data buku di database
+Route::put('/buku/{buku}', [ControllerBook::class, 'update'])->name('buku.update');

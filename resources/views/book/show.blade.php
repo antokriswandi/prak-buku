@@ -41,7 +41,7 @@
     </div>
 
     {{-- tombol edit buku --}}
-    <a href="" class="btn btn-primary mt-4">Edit Buku</a>
+    <a href="{{ route('buku.edit', $buku->id) }}" class="btn btn-primary mt-4">Edit Buku</a>
 
     {{-- tombol hapus buku --}}
     <form action="" method="POST" class="d-inline">
