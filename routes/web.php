@@ -24,3 +24,6 @@ Route::get('/buku/{buku}/edit', [ControllerBook::class, 'edit'])->name('buku.edi
 
 // Route untuk memperbarui data buku di database
 Route::put('/buku/{buku}', [ControllerBook::class, 'update'])->name('buku.update');
+
+// Route untuk menghapus data buku dari database
+Route::delete('/buku/{buku}', [ControllerBook::class, 'destroy'])->name('buku.destroy');

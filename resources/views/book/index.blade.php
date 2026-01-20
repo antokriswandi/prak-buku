@@ -42,7 +42,15 @@
                     <td>
                         <a href="{{ route('buku.show', $book->id) }}" class="btn btn-sm btn-info">Detail</a>
                         <a href="{{ route('buku.edit', $book->id) }}" class="btn btn-sm btn-warning">Edit</a>
-                        <a href="" class="btn btn-sm btn-danger">Hapus</a>
+                        
+                        {{-- tombol hapus buku menggunakan Form --}}
+                        <form action="{{ route('buku.destroy', $book->id) }}" method="post" class="d-inline">
+                            @csrf
+                            @method('delete')
+                            <button type="submit" class="btn btn-sm btn-danger"
+                            onclick="return confirm('Apakah Anda yakin ingin menghapus buku ini?')">Hapus</button>
+                        </form>
+                        
                     </td>
                 </tr>
             @empty

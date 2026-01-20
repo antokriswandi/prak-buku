@@ -44,10 +44,10 @@
     <a href="{{ route('buku.edit', $buku->id) }}" class="btn btn-primary mt-4">Edit Buku</a>
 
     {{-- tombol hapus buku --}}
-    <form action="" method="POST" class="d-inline">
+    <form action="{{ route('buku.destroy', $buku->id) }}" method="POST" class="d-inline">
         @csrf
         @method('DELETE')
-        <button type="submit" class="btn btn-danger mt-4">Hapus Buku</button>
+        <button type="submit" class="btn btn-danger mt-4" onclick="return confirm('Apakah Anda yakin ingin menghapus jurusan ini?')">Hapus Buku</button>
     </form>
 
 @endsection

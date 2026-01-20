@@ -135,4 +135,21 @@ class ControllerBook extends Controller
         // redirect ke halaman daftar buku dengan pesan sukses
         return redirect('/buku')->with('success', 'Buku berhasil diupdate.');
     }
+
+
+    // function destroy untuk menghapus data buku dari database
+    public function destroy(Book $buku)
+    {
+        // cek apakah ada cover buku yang perlu dihapus
+        if ($buku->cover) {
+            // hapus file cover buku dari penyimpanan
+            Storage::delete($buku->cover);
+        }
+
+        // hapus data buku dari database
+        $buku->delete();
+
+        // redirect ke halaman daftar buku dengan pesan sukses
+        return redirect('/buku')->with('success', 'Buku berhasil dihapus.');
+    }
 }
